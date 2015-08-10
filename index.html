@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>nanoservice</title>
+  <title>Nanoservice Project Home Page - nanoservice</title>
   <meta name="author" content="Oleksii Fedorov (waterlink)">
 
   
-  <meta name="description" content=" Blog Archives GitHub Repos Status updating... @nanoservice on GitHub ">
+  <meta name="description" content="Nanoservice Project Home Page Open source set of tools, systems and libraries to let developers build and
+deploy fully asynchronous nanoservices &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -47,22 +48,132 @@
 </ul>
   
 <ul class="main-navigation">
-  <li><a href="/about">About</a></li>
+  <li><a href="/">About</a></li>
   <li><a href="/goals">Goals</a></li>
 </ul>
 
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div class="landing">
+<article role="article">
+  
+  <header class="landing__header">
+    <h1 class="entry-title">Nanoservice Project Home Page</h1>
+    
+  </header>
+  
+  <p>Open source set of tools, systems and libraries to let developers build and
+deploy fully asynchronous nanoservices with ease.</p>
+
+<h3>* Fast to setup</h3>
+
+<h3>* Easy to use</h3>
+
+<h3>* Pleasure to deploy</h3>
+
+<h2>Install &amp; Configure</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>curl -L https://github.com/nanoservice/installer/raw/stable/install.sh <span class="p">|</span> bash
+</span><span class='line'>
+</span><span class='line'><span class="c"># configure nanoservice cluster on AWS (credentials, DNS, etc)</span>
+</span><span class='line'>nanoservice configure
+</span><span class='line'>
+</span><span class='line'><span class="c"># or configure hosted nanoservice cluster with your credentials</span>
+</span><span class='line'>nanoservice configure --hosted
+</span><span class='line'>
+</span><span class='line'><span class="c"># or configure local docker cluster for development</span>
+</span><span class='line'>nanoservice configure --docker
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Build your first &ldquo;Hello world&rdquo; web-nanoservice</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>nanoservice create helloworld --web --golang
+</span><span class='line'><span class="nb">cd </span>helloworld/
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Edit <code>main.go</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='go'><span class='line'><span class="kn">package</span> <span class="nx">main</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="s">&quot;github.com/nanoservice/libs-go/web&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">web</span><span class="p">.</span><span class="nx">Route</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">w</span> <span class="o">*</span><span class="nx">web</span><span class="p">.</span><span class="nx">Response</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">web</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// this is actually the only line we modified here</span>
+</span><span class='line'>    <span class="nx">w</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">})</span>
+</span><span class='line'>  <span class="nx">web</span><span class="p">.</span><span class="nx">Start</span><span class="p">()</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And deploy your app:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>nanoservice deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now if you reach <a href="http://helloworld.nanoservice.yourdomain.com/,">http://helloworld.nanoservice.yourdomain.com/,</a> you will see
+<code>Hello, world!</code> response. By the way, if you reach <code>/health</code> path, you will get
+<code>OK</code> - this is built-in health check mechanism.</p>
+
+<h2>What next?</h2>
+
+<ul>
+<li><a href="/tutorials">Tutorials</a></li>
+<li><a href="/examples">Examples</a></li>
+<li><a href="/docs">Documentation</a></li>
+</ul>
+
+
+  
+    <footer>
+      
+      
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://nanoservice.github.io/index.html" data-via="waterlink000" data-counturl="http://nanoservice.github.io/index.html" >Tweet</a>
   
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
 </div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     
@@ -101,6 +212,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
