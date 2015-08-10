@@ -67,7 +67,7 @@ want to be required to take any action for that.
 
 Milestone: 16.11.15.
 
-## Canari deployments
+## Canary deployments
 
 I want to be able to deploy a new version of a given nanoservice without
 affecting majority of my traffic. Slowly over time, new version should take
