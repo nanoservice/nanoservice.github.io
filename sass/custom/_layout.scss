@@ -19,3 +19,11 @@
 //$sidebar-pad-medium: 15px;
 //$sidebar-pad-wide: 20px;
 //$sidebar-width-wide: 300px;
+
+.landing {
+  padding-top: 0 !important;
+
+  &__header {
+    padding-top: 0;
+  }
+}
