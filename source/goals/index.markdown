@@ -16,7 +16,7 @@ I want to be able to setup my cluster in 5 minutes and it should have a default
 "Hello world" web-nanoservice and I want to be able to jump in and play around
 with it right away.
 
-Milestone: 31.08.15.
+Milestone: 05.09.15.
 
 ## From zero to deployed application prototype consisting of ~10 nanoservices communicating over the bus in 4 hours
 
