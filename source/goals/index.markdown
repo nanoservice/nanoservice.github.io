@@ -18,6 +18,8 @@ with it right away.
 
 Milestone: 05.09.15.
 
+**Milestone reached**: https://github.com/nanoservice/nanoservice/releases/tag/v0.1
+
 ## From zero to deployed application prototype consisting of ~10 nanoservices communicating over the bus in 4 hours
 
 I want to be able to bootstrap new nanoservice with one command. I want to be

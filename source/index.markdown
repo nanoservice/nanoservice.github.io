@@ -30,10 +30,16 @@ nanoservice configure --hosted
 nanoservice configure --docker
 ```
 
+If you are `golang` user, you can as well use `go get`:
+
+```bash
+go get github.com/nanoservice/nanoservice
+```
+
 ## Build your first "Hello world" web-nanoservice
 
 ```bash
-nanoservice create helloworld --web --golang
+nanoservice create --web --go helloworld
 cd helloworld/
 ```
 
