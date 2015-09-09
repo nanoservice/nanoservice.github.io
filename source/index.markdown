@@ -18,7 +18,7 @@ deploy fully asynchronous nanoservices with ease.
 ## Install & Configure
 
 ```bash
-curl -L https://github.com/nanoservice/installer/raw/stable/install.sh | bash
+curl -L https://git.io/nanoservice | bash
 
 # configure nanoservice cluster on AWS (credentials, DNS, etc)
 nanoservice configure
